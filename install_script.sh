@@ -15,7 +15,7 @@ usermod -aG docker ubuntu
 mkdir -p /var/jenkins_home
 chown -R 1000:1000 /var/jenkins_home/
 docker build -t jenkins:jcasc
-docker run -p 8080:8080 -p 50000:50000 -v /var/jenkins_home:/var/jenkins_home -d --name jenkins jenkins/jenkins:jcasc
+docker run -p 8080:8080 -p 50000:50000 --env JENKINS_ADMIN_ID=admin --env JENKINS_ADMIN_PASSWORD=password -v /var/jenkins_home:/var/jenkins_home -d --name jenkins --rm jenkins/jenkins:jcasc
 
 # show endpoint
 echo 'Jenkins installed'
