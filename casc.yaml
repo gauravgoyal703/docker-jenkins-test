@@ -34,3 +34,16 @@ credentials:
               id: commerceCloudCredentials
               username: "subscriptionID"
               password: "APItoken"
+unclassified:
+  sonarglobalconfiguration:                  # mandatory
+    buildWrapperEnabled: true
+    installations:                           # mandatory
+      - name: "sonarQubeConfiguration"       # id of the SonarQube configuration - to be used in jobs
+        serverUrl: "http://13.55.135.12:9000"
+        credentialsId: ${sonarcreds}         # id of the credentials containing sonar auth token (since 2.9 version)
+        serverAuthenticationToken: "token"   # for retrocompatibility with versions < 2.9
+        mojoVersion: "mojoVersion"
+        triggers:
+          skipScmCause: true
+          skipUpstreamCause: true
+          envVar: "envVar"
