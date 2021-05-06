@@ -10,9 +10,14 @@ jenkins:
       permissions:
         - "Overall/Administer:admin"
         - "Overall/Read:authenticated"
-    remotingSecurity:
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  remotingSecurity:
       enabled: true
 security:
+  remotingCLI:
+    enabled: false
   queueItemAuthenticator:
     authenticators:
     - global:
