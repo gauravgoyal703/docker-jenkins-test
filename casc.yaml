@@ -17,3 +17,17 @@ security:
     authenticators:
     - global:
         strategy: triggeringUsersAuthorizationStrategy
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - usernamePassword:
+              scope: GLOBAL
+              id: githubCodeRepoCredentials
+              username: "gauravgoyal703@gmail.com"
+              password: ${githubCodeRepoCredentials}
+          - usernamePassword:
+              scope: GLOBAL
+              id: commerceCloudCredentials
+              username: "subscriptionID"
+              password: "APItoken"
