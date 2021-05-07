@@ -15,7 +15,7 @@ usermod -aG docker ubuntu
 mkdir -p /var/jenkins_home
 chown -R 1000:1000 /var/jenkins_home/
 docker build -t jenkins:jcasc .
-docker run -p 8080:8080 -p 50000:50000 --env sonarcreds=${{ SONARCREDS }} --env githubCodeRepoCredentials=${{ GITHUBCODEREPOCREDENTIALS }} --env JENKINS_ADMIN_ID=${{ JENKINS_ADMIN_ID }} --env JENKINS_ADMIN_PASSWORD=${{ JENKINS_ADMIN_PASSWORD }} -v /var/jenkins_home:/var/jenkins_home -d --name jenkins --rm jenkins:jcasc
+docker run -p 8080:8080 -p 50000:50000 --env sonarcreds=${{ secrets.SONARCREDS }} --env githubCodeRepoCredentials=${{ secrets.GITHUBCODEREPOCREDENTIALS }} --env JENKINS_ADMIN_ID=${{ secrets.JENKINS_ADMIN_ID }} --env JENKINS_ADMIN_PASSWORD=${{ secrets.JENKINS_ADMIN_PASSWORD }} -v /var/jenkins_home:/var/jenkins_home -d --name jenkins --rm jenkins:jcasc
 
 # run sonar
 docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 -p 9092:9092 sonarqube:latest
