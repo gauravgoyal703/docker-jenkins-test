@@ -1,7 +1,11 @@
-version: '1'
+version: '3'
 services:
   jenkins:
-    image: jenkins:jcasc
+    # Path to dockerfile.
+    # '.' represents the current directory in which
+    # docker-compose.yml is present.
+    build: .
+    #image: jenkins:jcasc
     ports:
       - "8080:8080"
       - "50000:50000"
