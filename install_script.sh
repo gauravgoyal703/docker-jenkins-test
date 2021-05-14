@@ -19,6 +19,10 @@ sudo chmod +x /usr/local/bin/docker-compose
 # Fix for Sonarqube Elastic Search Issue
 sysctl -w vm.max_map_count=262144
 
+# Jenkins permissions
+mkdir -p /var/jenkins_home
+chown -R 1000:1000 /var/jenkins_home/
+
 # run docker-compose
 docker-compose build
 docker-compose up -d
