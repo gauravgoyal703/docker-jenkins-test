@@ -17,6 +17,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 
 # run docker-compose
+docker-compose build
 docker-compose up -d
 
 # run jenkins
