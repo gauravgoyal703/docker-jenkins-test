@@ -25,7 +25,7 @@ chown -R 1000:1000 /var/jenkins_home/
 
 # run docker-compose
 docker-compose build
-docker-compose --env-file /config/.env.dev up -d
+docker-compose --env-file /home/ubuntu/config/.env.dev up -d
 
 # run jenkins
 #mkdir -p /var/jenkins_home
