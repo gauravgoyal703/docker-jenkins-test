@@ -32,8 +32,8 @@ credentials:
           - usernamePassword:
               scope: GLOBAL
               id: commerceCloudCredentials
-              username: "subscriptionID"
-              password: "APItoken"
+              username: ${COMMERCE_CLOUD_USER}
+              password: ${COMMERCE_CLOUD_PASSWORD}
 unclassified:
   sonarglobalconfiguration:                  # mandatory
     buildWrapperEnabled: true
